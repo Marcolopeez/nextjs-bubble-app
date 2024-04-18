@@ -58,7 +58,7 @@ export default function Home() {
         if (isWeb3Enabled) {
             checkLock()
         }
-    }, [isWeb3Enabled])
+    }, [isWeb3Enabled]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className="container mx-auto">

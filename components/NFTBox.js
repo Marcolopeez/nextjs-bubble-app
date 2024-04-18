@@ -112,7 +112,7 @@ export default function NFTBox({ tokenId }) {
         if (isWeb3Enabled) {
             updateUI()
         }
-    }, [isWeb3Enabled])
+    }, [isWeb3Enabled]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const HandleCardClick = () => {
         sellingNftId == tokenId ?

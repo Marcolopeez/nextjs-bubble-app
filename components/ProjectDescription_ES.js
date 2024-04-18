@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from "next/image"
 
 const BubbleDescription_ES = () => {
     return (
@@ -21,7 +22,7 @@ const BubbleDescription_ES = () => {
                     Bubble consta de 10 NFTs únicos y originales. Estos NFTs son recreaciones de escenas, donde se produce una simbiosis persistente entre diferentes organismos de especies imaginarias. Estas especies dan lugar a ejemplos de mutualismo simbiótico, aumentando su aptitud biológica (capacidad de supervivencia). El mutualismo, describe la interacción entre dos o más especies donde cada una tiene un beneficio neto, siendo un tipo común de interacción ecológica. Estas escenas de simbiosis representan lo opuesto a la interacción del ser humano dentro de la biodiversidad.
                 </p>
                 <p className="py-4">
-                    Bubble es una colección de NFTs donde el 10% de los beneficios se destinará a reforestación en "El Bosque de los Zaragozanos" para ayudar a compensar la huella de carbono heredada. Además, es una colección donde ningún participante sufre perdidas, la única "penalización" que puede tener un participante es acabar siendo el propietario de una pieza de arte.
+                    Bubble es una colección de NFTs donde el 10% de los beneficios se destinará a reforestación en &quot;El Bosque de los Zaragozanos&quot; para ayudar a compensar la huella de carbono heredada. Además, es una colección donde ningún participante sufre perdidas, la única &quot;penalización&quot; que puede tener un participante es acabar siendo el propietario de una pieza de arte.
                 </p>
                 <p className="py-4">
                     &quot;La Tierra proporciona lo suficiente para satisfacer las necesidades de todos, pero no la codicia de todos&quot; (M. Gandhi).

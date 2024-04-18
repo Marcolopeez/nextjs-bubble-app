@@ -30,7 +30,7 @@ export default function Header() {
         if (isWeb3Enabled) {
             updateBalance()
         }
-    }, [isWeb3Enabled, account])
+    }, [isWeb3Enabled, account]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const HandleButtonClick = () => {
         setShowWithdrawModal(true)
