@@ -6,7 +6,7 @@ const BubbleDescription_ES = () => {
             <div className="py-8 px-20 font-mono text-sm text-gray-800 bg-white rounded-lg shadow-lg border border-gray-300 text-justify">
                 <h1 className="text-2xl font-bold text-center py-4">Bubble</h1>
                 <p className="py-4">
-                    Bubble is a project based on speculation and the carbon footprint caused by Ethereum before “The Merge”, as a human parasitism representation, and its criticism per se.
+                    Bubble is a project based on speculation and the carbon footprint caused by Ethereum before &quot;The Merge&quot;, as a human parasitism representation, and its criticism per se.
                 </p>
                 <p className="py-4">
                     This artwork developed by OPN Studio (Susana Ballesteros & Jano Montañés) <a href="http://opnstudio.com" className="text-blue-500 hover:underline">opnstudio.com</a> tackles these two important issues in our society within the European project called ARTeCHO - Art, Economy & Technology.
@@ -27,7 +27,7 @@ const BubbleDescription_ES = () => {
                     Furthermore, Bubble is a collection where no participant suffers losses, the only penalty that a speculative participant can suffer is ending up being the collector of a piece of art.
                 </p>
                 <p className="py-4">
-                    “Earth provides enough to satisfy every man's needs, but not every man's greed” (M. Gandhi).
+                    &quot;Earth provides enough to satisfy every man&apos;s needs, but not every man&apos;s greed&quot; (M. Gandhi).
                 </p>
                 <h1 className="text-2xl font-bold text-center py-4">Bubble Game Rules</h1>
                 <p className="py-4">
@@ -44,7 +44,7 @@ const BubbleDescription_ES = () => {
                     It must be considered that the transaction expenses in the blockchain (gas fee) must be added to all these amounts. Together with that these gas fees are variable, depending on the moment in which the transaction is made and other factors.
                 </p>
                 <p className="py-4">
-                    In addition, it must be added a 10% of Royalties that will be allocated to "El Bosque de los Zaragozanos”. This is as compensation for the inherited carbon footprint as it was mentioned previously. FYI, below, you will find an example of the selling of Bubble#3 in round 2. The diagram shows the amounts. The marketplace (www.bubblemarketplace.com) does not charge any type of commission for Bubble transactions. It is free.
+                    In addition, it must be added a 10% of Royalties that will be allocated to &quot;El Bosque de los Zaragozanos&quot;. This is as compensation for the inherited carbon footprint as it was mentioned previously. FYI, below, you will find an example of the selling of Bubble#3 in round 2. The diagram shows the amounts. The marketplace (www.bubblemarketplace.com) does not charge any type of commission for Bubble transactions. It is free.
                 </p>
                 <p className="py-4">
                     Once the 10 NFTs are sold, their resale will restart. This new sale will be carried out in the same order as the initial one. Besides, each NFT cannot be sold/purchased until the predecessor NFT have been acquired again. Every time an NFT is resold, the previous owner has the obligation to sell it.
@@ -70,7 +70,7 @@ const BubbleDescription_ES = () => {
                     When the blockade occurs, the game will be ended and all NFTs will be awarded to the users / players who have them in possession at that time. Moreover, the blockade will begin preventing their sale for a period of 481 days.
                 </p>
                 <p className="py-4">
-                    Users who have not achieved NFT ownership, they can withdraw the obtained funds by connecting their Metamask wallet to <a href="http://bubblemarketplace.com" className="text-blue-500 hover:underline">www.bubblemarketplace.com</a> by directly clicking the "Withdraw" button. Automatically, the deposited amount will be transferred to a non-Bubble wallet. It is very important to use the same wallet with the purchase was made, since it is the only way in which the program can refund the amount.
+                    Users who have not achieved NFT ownership, they can withdraw the obtained funds by connecting their Metamask wallet to <a href="http://bubblemarketplace.com" className="text-blue-500 hover:underline">www.bubblemarketplace.com</a> by directly clicking the &quot;Withdraw&quot; button. Automatically, the deposited amount will be transferred to a non-Bubble wallet. It is very important to use the same wallet with the purchase was made, since it is the only way in which the program can refund the amount.
                 </p>
                 <p className="py-4">
                     This operation can be carried out from the moment in which users / players have lost NFT ownership until the disappearance of the Marketplace <a href="http://bubblemarketplace.com" className="text-blue-500 hover:underline">(www.bubblemarketplace.com)</a> which is estimated in April 2025.
@@ -82,7 +82,7 @@ const BubbleDescription_ES = () => {
                 <p className="py-4">[2] The blocking time is 481 days, which is the time it takes for a 40-years-old Pinus Halepensis (at a rate of 160 kg of CO2/year [3]) to eliminate its carbon footprint (211 kg of CO2). This data (211kg of CO2) refers to the carbon footprint that an average NFT produced in Ethereum, before The Merge throughout its life, as it was estimated by Memo Akten in 2021.</p>
                 <img src="/carbon_footrpint_NFT_premerge.jpg" alt="carbon_footrpint_NFT_premerge" className="py-10 px-10 mx-auto " />
                 <img src="/Pinus_CO2_blockade.jpg" alt="Pinus_CO2_blockade" className="py-10 px-10 mx-auto " />
-                <p className="py-4">[3] “Guide for the estimation of Carbon Dioxide absorptions" Ministry of Spain for the Ecological Transition, 2019.</p>
+                <p className="py-4">[3] &quot;Guide for the estimation of Carbon Dioxide absorptions&quot; Ministry of Spain for the Ecological Transition, 2019.</p>
             </div>
         </div>
     );
