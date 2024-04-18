@@ -1,22 +1,34 @@
 {
-  "name": "nextjs-bubble",
+  "name": "nextjs-nft-marketplace-fcc",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "moralis:sync": "moralis-admin-cli connect-local-devchain --chain hardhat --moralisSubdomain lkei3yi1kglb.usemoralis.com --frpcPath ./frp/frpc",
+    "moralis:cloud": "moralis-admin-cli watch-cloud-folder --moralisSubdomain lkei3yi1kglb.usemoralis.com --autoSave 1 --moralisCloudfolder ./cloudFunctions"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.2"
+    "@walletconnect/ethereum-provider": "^2.12.2",
+    "@web3uikit/core": "^1.1.5",
+    "@web3uikit/icons": "^1.1.2",
+    "@web3uikit/web3": "^0.3.2",
+    "magic-sdk": "^26.0.0",
+    "moralis-v1": "^1.13.0",
+    "next": "^14.2.1",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-moralis": "^1.3.5",
+    "web3uikit": "^0.0.133"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.2"
+    "autoprefixer": "^10.4.5",
+    "dotenv": "^16.0.0",
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.24"
   }
 }
