@@ -4,19 +4,29 @@ import { Button } from "@web3uikit/core"
 import { useWeb3Contract, useMoralis } from "react-moralis"
 import Link from "next/link"
 import WithdrawModal from "./WithdrawModal"
+import TryLockModal from "./TryLockModal"
 import marketplaceAbi from "../constants/BubbleMarketplace.json"
 import { marketplaceAddress } from "../constants/ContractAddresses"
 
 export default function Header() {
     const { isWeb3Enabled, account } = useMoralis()
     const [balance, setBalance] = useState("")
+    const [deploymentDate, setDeploymentDate] = useState("")
     const [showWithdrawModal, setShowWithdrawModal] = useState(false)
     const hideWithdrawModal = () => setShowWithdrawModal(false)
+    const [showTryLockModal, setShowTryLockModal] = useState(false)
+    const hideTryLockModal = () => setShowTryLockModal(false)
 
     async function updateBalance() {
         const balance = await getBalance()
         setBalance(balance)
         console.log(`The balance of ${account} is ${balance}`)
+    }
+
+    async function updateDaysElapsed() {
+        const deploymentDate = await getDeploymentDate()
+        console.log(`The deploymentDate is: ${deploymentDate}`)
+        setDeploymentDate(deploymentDate)
     }
 
     const { runContractFunction: getBalance } = useWeb3Contract({
@@ -26,14 +36,26 @@ export default function Header() {
         params: { account: account },
     })
 
+    const { runContractFunction: getDeploymentDate } = useWeb3Contract({
+        abi: marketplaceAbi,
+        contractAddress: marketplaceAddress,
+        functionName: "getDeploymentTimestamp",
+        params: {},
+    })
+
     useEffect(() => {
         if (isWeb3Enabled) {
             updateBalance()
+            updateDaysElapsed()
         }
     }, [isWeb3Enabled, account]) // eslint-disable-line react-hooks/exhaustive-deps
 
-    const HandleButtonClick = () => {
+    const HandleWithdrawButtonClick = () => {
         setShowWithdrawModal(true)
+    }
+
+    const HandleLockButtonClick = () => {
+        setShowTryLockModal(true)
     }
 
     return (
@@ -47,8 +69,18 @@ export default function Header() {
 
                 {isWeb3Enabled ? (
                     <div className="flex flex-row items-center">
+
+                        <div className="flex flex-row items-center px-4">
+                            <Button
+                                onClick={HandleLockButtonClick}
+                                text="Lock"
+                                size="large"
+                                theme="moneyPrimary"
+                            />
+                        </div>
+
                         <Button
-                            onClick={HandleButtonClick}
+                            onClick={HandleWithdrawButtonClick}
                             text="Withdraw"
                             size="large"
                             theme="moneyPrimary"
@@ -65,6 +97,7 @@ export default function Header() {
             </nav>
             <div>
                 <WithdrawModal isVisible={showWithdrawModal} onClose={hideWithdrawModal} balance={balance} />
+                <TryLockModal isVisible={showTryLockModal} onClose={hideTryLockModal} deploymentDate={deploymentDate} />
             </div>
         </div >
     )

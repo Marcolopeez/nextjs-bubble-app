@@ -13,8 +13,8 @@ const CenteredLoading = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fondo semi-transparente para cubrir los elementos detrás
-                zIndex: '9999', // Asegura que esté por encima de otros elementos
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                zIndex: '9999',
             }}
         >
             <Loading size={70} spinnerColor="#2E7DAF" />

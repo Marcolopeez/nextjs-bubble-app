@@ -41,7 +41,7 @@ export default function Home() {
     }
 
     async function checkLock() {
-        const lockTimestamp = await getLockTimestamp() // 1711376054
+        const lockTimestamp = await getLockTimestamp()
         const regulatedState = await getRegulatedState()
         setLockTimestamp(lockTimestamp)
         console.log("lockTimestamp", lockTimestamp)

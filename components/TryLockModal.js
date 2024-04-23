@@ -3,27 +3,40 @@ import { Modal, useNotification } from "@web3uikit/core"
 import { Loading } from 'web3uikit'
 import { useWeb3Contract } from "react-moralis"
 import marketplaceAbi from "../constants/BubbleMarketplace.json"
-import { ethers } from "ethers"
 import { marketplaceAddress } from "../constants/ContractAddresses"
 
-export default function WithdrawModal({ isVisible, onClose, balance }) {
+export default function WithdrawModal({ isVisible, onClose, deploymentDate }) {
     const dispatch = useNotification()
     const [loading, setLoading] = useState(false)
 
-    const { runContractFunction: withdraw } = useWeb3Contract({
+    function convertUnixTimestampToUTC(unixTimestamp) {
+        const date = new Date(unixTimestamp * 1000);
+
+        const year = date.getUTCFullYear();
+        const month = date.getUTCMonth() + 1;
+        const day = date.getUTCDate();
+        const hours = date.getUTCHours();
+        const minutes = date.getUTCMinutes();
+
+        const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} at ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+
+        return formattedDate;
+    }
+
+    const { runContractFunction: tryLock } = useWeb3Contract({
         abi: marketplaceAbi,
         contractAddress: marketplaceAddress,
-        functionName: "withdraw",
+        functionName: "tryLock",
         params: {},
     })
 
-    const handleWithdrawSuccess = async (tx) => {
+    const handleTryLockSuccess = async (tx) => {
         setLoading(true)
         await tx.wait(1)
         dispatch({
             type: "success",
             message: "",
-            title: "Balance withdrawn",
+            title: "Transaction confirmed",
             position: "topR",
         })
         onClose && onClose()
@@ -37,11 +50,11 @@ export default function WithdrawModal({ isVisible, onClose, balance }) {
         <Modal
             id="regular"
             isVisible={isVisible}
-            title="Withdraw"
+            title="Lock"
             onCancel={onClose}
             onCloseButtonPressed={onClose}
             onOk={() => {
-                withdraw({
+                tryLock({
                     onError: (error) => {
                         console.log(error)
                         setLoading(false)
@@ -54,7 +67,7 @@ export default function WithdrawModal({ isVisible, onClose, balance }) {
                         })
                         onClose && onClose()
                     },
-                    onSuccess: handleWithdrawSuccess,
+                    onSuccess: handleTryLockSuccess,
                 })
             }}
         >
@@ -81,8 +94,8 @@ export default function WithdrawModal({ isVisible, onClose, balance }) {
                     </div>
                 ) : (
                     <>
-                        <p className="text-2xl font-mono font-bold text-gray-500"> Earned Balance: {balance ? ethers.utils.formatUnits(balance, "ether") : "0"} ETH</p>
-                        <p className="text-2xl font-mono text-gray-500">Proceed to withdrawal?</p>
+                        <p className="text-2xl font-mono font-bold text-gray-500"> Deployment date:  {convertUnixTimestampToUTC(parseFloat(deploymentDate))} (UTC) </p>
+                        <p className="text-2xl font-mono text-gray-500">Try to lock?</p>
                     </>
                 )}
             </div>

@@ -87,7 +87,7 @@ export default function NFTBox({ tokenId }) {
         const nftOwner = await getOwnerOf()
         const nftId = await getSellingNftId()
         const nftPrice = await getPrice()
-        const lockTimestamp = await getLockTimestamp() // 1711376054
+        const lockTimestamp = await getLockTimestamp()
         console.log(`The TokenURI is ${tokenURI}`)
         console.log(`The token owner is ${nftOwner}`)
         console.log(`The sellingNftId is ${nftId}`)
@@ -121,7 +121,7 @@ export default function NFTBox({ tokenId }) {
                     console.log(error)
                     dispatch({
                         type: "error",
-                        message: "",
+                        message: error.data.message,
                         title: "Transaction failed",
                         position: "topR",
                     })
@@ -164,6 +164,7 @@ export default function NFTBox({ tokenId }) {
                                 width="700"
                                 unoptimized
                                 priority
+                                alt=""
                             />
                             <div className="flex font-mono font-bold">
                                 {lockTimestamp != "0" ?

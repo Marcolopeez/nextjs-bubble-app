@@ -63,7 +63,7 @@ export default function LockModal({ isVisible, onClose, lockTimestamp }) {
 
                         dispatch({
                             type: "error",
-                            message: "",
+                            message: error.data.message,
                             title: "Transaction failed",
                             position: "topR",
                         })
@@ -96,8 +96,8 @@ export default function LockModal({ isVisible, onClose, lockTimestamp }) {
                     </div>
                 ) : (
                     <>
-                        <p className="text-2xl font-mono font-bold text-gray-500"> Marketplace is Locked</p>
-                        <p className="text-2xl font-mono text-gray-500"> NFTs can be released from {convertUnixTimestampToUTC(parseFloat(lockTimestamp) + parseFloat(2592000)) /*Adding 30 days to the lockTimestamp*/} (UTC)</p>                    </>
+                        <p className="text-2xl font-mono font-bold text-gray-500"> Marketplace is Locked. Healing time 481 days blockade activated</p>
+                        <p className="text-2xl font-mono text-gray-500"> NFTs can be released from {convertUnixTimestampToUTC(parseFloat(lockTimestamp) + parseFloat(41558400)) /*Adding 481 days to the lockTimestamp*/} (UTC)</p>                    </>
                 )}
             </div>
         </Modal>

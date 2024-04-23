@@ -44,7 +44,7 @@ const BubbleDescription_ES = () => {
                     It must be considered that the transaction expenses in the blockchain (gas fee) must be added to all these amounts. Together with that these gas fees are variable, depending on the moment in which the transaction is made and other factors.
                 </p>
                 <p className="py-4">
-                    In addition, it must be added a 10% of Royalties that will be allocated to &quot;El Bosque de los Zaragozanos&quot;. This is as compensation for the inherited carbon footprint as it was mentioned previously. FYI, below, you will find an example of the selling of Bubble#3 in round 2. The diagram shows the amounts. The marketplace (www.bubblemarketplace.com) does not charge any type of commission for Bubble transactions. It is free.
+                    In addition, it must be noted, 10% (of the sale price) derived from Royalties, must also be subtracted from the sale profit obtained, which it will be allocated to &quot;El Bosque de los Zaragozanos&quot;. This is as compensation for the inherited carbon footprint as it was mentioned previously. FYI, below, you will find an example of the selling of Bubble#3 in round 2. The diagram shows the amounts. The marketplace (www.bubblemarketplace.com) does not charge any type of commission for Bubble transactions. It is free.
                 </p>
                 <p className="py-4">
                     Once the 10 NFTs are sold, their resale will restart. This new sale will be carried out in the same order as the initial one. Besides, each NFT cannot be sold/purchased until the predecessor NFT have been acquired again. Every time an NFT is resold, the previous owner has the obligation to sell it.
