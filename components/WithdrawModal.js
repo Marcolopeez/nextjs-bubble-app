@@ -48,7 +48,7 @@ export default function WithdrawModal({ isVisible, onClose, balance }) {
 
                         dispatch({
                             type: "error",
-                            message: error.data.message,
+                            message: "",
                             title: "Transaction failed",
                             position: "topR",
                         })

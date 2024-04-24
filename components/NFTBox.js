@@ -115,21 +115,22 @@ export default function NFTBox({ tokenId }) {
     }, [isWeb3Enabled]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const HandleCardClick = () => {
-        sellingNftId == tokenId ?
+        if (sellingNftId == tokenId) {
             purchase({
                 onError: (error) => {
                     console.log(error)
                     dispatch({
                         type: "error",
-                        message: error.data.message,
+                        message: "",
                         title: "Transaction failed",
                         position: "topR",
                     })
                 },
                 onSuccess: handlePurchaseSuccess,
             })
-            : null
+        }
     }
+
 
     const handlePurchaseSuccess = async (tx) => {
         setIsLoading(true)

@@ -63,7 +63,7 @@ export default function LockModal({ isVisible, onClose, lockTimestamp }) {
 
                         dispatch({
                             type: "error",
-                            message: error.data.message,
+                            message: "",
                             title: "Transaction failed",
                             position: "topR",
                         })
